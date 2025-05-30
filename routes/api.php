@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\ProductCategoryController;
 use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,5 @@ Route::prefix('products')->controller(ProductController::class)->group(function 
 Route::prefix('categories')->controller(ProductCategoryController::class)->group(function () {
     Route::get('/', 'all');
 });
+
+Route::post('register', [UserController::class, 'register']);
