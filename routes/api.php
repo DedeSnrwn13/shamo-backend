@@ -19,3 +19,4 @@ Route::prefix('categories')->controller(ProductCategoryController::class)->group
 });
 
 Route::post('register', [UserController::class, 'register']);
+Route::post('login', [UserController::class, 'login']);
