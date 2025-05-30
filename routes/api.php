@@ -22,7 +22,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('user', [UserController::class, 'updateProfile']);
     Route::post('logout', [UserController::class, 'logout']);
 
-    Route::prefix('transactions')->controller(TransactionController::class)->group(function () {
-        Route::get('/', 'all');
+    Route::controller(TransactionController::class)->group(function () {
+        Route::get('transactions', 'all');
+        Route::post('checkout', 'checkout');
     });
 });
